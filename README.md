@@ -1,3 +1,5 @@
+## Buenos días, profesor. En este repositorio cuento con tres ejemplos en código que emplean los patrones arquitectónicos MVC, Capas y el Patrón Hexagonal. Cada código cuenta con su explicación en este archivo README. Los otros dos patrones (Enfocado al Dominio - MVP: Modelo Vista Presentador) no poseen ejemplos en código, pero sí incluyen gráficas de funcionamiento y el mismo contenido teórico que los demás modelos. Muchas gracias.
+
 # ACT1
 
 ## PATRON N1
