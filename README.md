@@ -1,8 +1,8 @@
-# ArquitecturaAct1 
+# ACT1
 
-# PATRON N1
+## PATRON N1
 
-# Patrón de Diseño MVC (Modelo-Vista-Controlador)
+## Patrón de Diseño MVC (Modelo-Vista-Controlador)
 
 Este documento describe el patrón de diseño **Modelo-Vista-Controlador (MVC)**, cómo funciona, sus ventajas, desventajas, y cuándo es recomendable utilizarlo.
 
@@ -53,4 +53,48 @@ El patrón **Modelo-Vista-Controlador (MVC)** es una arquitectura que separa una
 - **Requerimientos de alta performance**: En algunas situaciones, la separación estricta de capas puede introducir overhead, y en aplicaciones críticas donde cada milisegundo cuenta, podría no ser la mejor opción.
 
 ---
+
+# Arquitectura Hexagonal 
+
+## Introducción
+
+La Arquitectura Hexagonal, también conocida como Arquitectura de Puertos y Adaptadores, es un patrón de diseño que promueve la separación de la lógica de negocio de las interfaces externas. Este patrón fue propuesto por Alistair Cockburn en 2005 con el objetivo de crear aplicaciones mantenibles, flexibles y fáciles de probar.
+
+## ¿Qué es la Arquitectura Hexagonal?
+
+La Arquitectura Hexagonal propone organizar la aplicación de manera que la lógica de negocio esté en el centro, rodeada de "puertos" y "adaptadores" que permiten la comunicación con el mundo exterior.
+
+### Componentes Principales
+
+- **Dominio (Núcleo de la Aplicación):**
+  - Contiene la lógica de negocio pura.
+  - No depende de ninguna tecnología externa.
+  - Aquí se encuentran las entidades, servicios de dominio, y casos de uso.
+
+- **Puertos:**
+  - Interfaces que definen las operaciones que el núcleo de la aplicación puede realizar.
+  - Existen dos tipos de puertos:
+    - **Entrantes (Inbound):** Definen cómo el mundo exterior puede interactuar con la aplicación (por ejemplo, interfaces de servicios).
+    - **Salientes (Outbound):** Definen cómo la aplicación interactúa con el mundo exterior (por ejemplo, repositorios o clientes HTTP).
+
+- **Adaptadores:**
+  - Implementaciones concretas que conectan los puertos con tecnologías específicas.
+  - Ejemplos incluyen controladores web, implementaciones de repositorios, clientes de API externas, etc.
+
+### Ventajas
+
+- **Separación de responsabilidades:** Mantiene la lógica de negocio independiente de las tecnologías externas.
+- **Facilidad de prueba:** La lógica de negocio puede ser probada sin la necesidad de depender de infraestructuras externas.
+- **Flexibilidad:** Permite cambiar las tecnologías externas (como bases de datos o frameworks de UI) sin afectar el núcleo de la aplicación.
+
+### Desventajas
+
+- **Complejidad:** Introduce una estructura más compleja que puede ser excesiva para aplicaciones pequeñas.
+- **Curva de aprendizaje:** Requiere un mayor entendimiento del patrón y puede ser difícil de implementar correctamente.
+
+### Cuándo Usarla
+
+- **Aplicaciones complejas:** Es ideal cuando se espera que la aplicación crezca y se necesite flexibilidad para cambiar tecnologías externas.
+- **Entornos con alta volatilidad tecnológica:** Si el entorno tecnológico cambia con frecuencia, la arquitectura hexagonal facilita la adaptación.
+- **Proyectos donde la mantenibilidad es clave:** Si la mantenibilidad a largo plazo es una prioridad, este patrón ayuda a mantener el código limpio y desacoplado.
 
