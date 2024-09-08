@@ -154,3 +154,61 @@ El Patrón de Diseño de Capas estructura una aplicación dividiendo su funciona
 - **Proyectos a largo plazo:** Adecuado para proyectos donde la mantenibilidad y la escalabilidad son prioritarias.
 - **Sistemas modulares:** Útil cuando se necesita un diseño modular que permita cambios y extensiones en partes específicas del sistema sin afectar a otras.
 
+Patron N4 
+# Patrón de Diseño Enfocado al Dominio (Domain-Driven Design, DDD) en Proyecto XYZ
+
+## Introducción
+
+El **Domain-Driven Design (DDD)** es un enfoque de desarrollo de software que se centra en modelar el núcleo de la aplicación basándose en el dominio del problema. Introducido por Eric Evans en su libro "Domain-Driven Design: Tackling Complexity in the Heart of Software", DDD se utiliza principalmente en proyectos complejos donde es crucial capturar y reflejar fielmente las reglas de negocio y las interacciones del dominio.
+
+## ¿Qué es el Diseño Enfocado al Dominio?
+
+El Diseño Enfocado al Dominio (DDD) organiza la estructura y el desarrollo de un proyecto alrededor del dominio y la lógica de negocio. DDD promueve una colaboración cercana entre desarrolladores y expertos en el dominio para asegurar que el modelo de software refleje con precisión el mundo real y las reglas del negocio.
+
+### Componentes Principales
+
+- **Entidades:**
+  - Objetos que tienen una identidad única en el sistema.
+  - Representan cosas del dominio que persisten a lo largo del tiempo y que pueden cambiar su estado.
+
+- **Value Objects (Objetos de Valor):**
+  - Objetos que no tienen identidad única.
+  - Son definidos por sus atributos y se consideran inmutables.
+
+- **Agregados:**
+  - Conjuntos de objetos relacionados que se tratan como una unidad para la consistencia de datos.
+  - Tienen una entidad raíz que controla el acceso a los demás objetos dentro del agregado.
+
+- **Repositorios:**
+  - Se encargan de la persistencia y recuperación de agregados.
+  - Proporcionan una abstracción sobre las operaciones de base de datos, permitiendo que el código del dominio no se vea afectado por los detalles de la persistencia.
+
+- **Servicios de Dominio:**
+  - Contienen lógica de negocio que no encaja naturalmente dentro de ninguna entidad o agregado.
+  - Son operaciones del dominio que pueden involucrar varias entidades o agregados.
+
+- **Fábricas:**
+  - Encargadas de la creación de objetos complejos, especialmente agregados, asegurando que se construyan de manera consistente.
+
+- **Eventos de Dominio:**
+  - Representan hechos importantes que han ocurrido en el dominio.
+  - Pueden ser utilizados para desencadenar acciones dentro o fuera del sistema.
+
+### Ventajas
+
+- **Modelo de dominio rico:** Permite capturar de manera detallada y precisa las reglas y comportamientos del dominio.
+- **Enfoque colaborativo:** Fomenta una estrecha colaboración entre los desarrolladores y los expertos en el dominio, asegurando que el software cumpla con las expectativas del negocio.
+- **Escalabilidad:** Facilita la gestión de la complejidad en sistemas grandes y evolutivos.
+- **Consistencia:** Asegura la consistencia del dominio al organizar y proteger la lógica del negocio dentro de los agregados.
+
+### Desventajas
+
+- **Complejidad:** Puede ser excesivamente complejo para proyectos pequeños o donde el dominio no es muy complicado.
+- **Curva de aprendizaje:** Requiere una comprensión profunda del dominio y puede necesitar más tiempo de desarrollo inicial.
+- **Requiere colaboración intensa:** Depende en gran medida de la disponibilidad y el conocimiento de los expertos en el dominio.
+
+### Cuándo Usarla
+
+- **Dominios complejos:** Ideal para proyectos donde el dominio del problema es complicado y evoluciona con el tiempo.
+- **Aplicaciones empresariales:** Adecuado para sistemas grandes que requieren una lógica de negocio sofisticada.
+- **Proyectos con larga vida útil:** Recomendado para proyectos que se mantendrán y evolucionarán durante un largo período.
