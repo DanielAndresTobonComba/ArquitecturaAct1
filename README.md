@@ -54,6 +54,9 @@ El patrón **Modelo-Vista-Controlador (MVC)** es una arquitectura que separa una
 
 ---
 
+
+# Patron N2
+
 # Arquitectura Hexagonal 
 
 ## Introducción
@@ -97,4 +100,57 @@ La Arquitectura Hexagonal propone organizar la aplicación de manera que la lóg
 - **Aplicaciones complejas:** Es ideal cuando se espera que la aplicación crezca y se necesite flexibilidad para cambiar tecnologías externas.
 - **Entornos con alta volatilidad tecnológica:** Si el entorno tecnológico cambia con frecuencia, la arquitectura hexagonal facilita la adaptación.
 - **Proyectos donde la mantenibilidad es clave:** Si la mantenibilidad a largo plazo es una prioridad, este patrón ayuda a mantener el código limpio y desacoplado.
+
+
+# Patron N3
+# Patrón de Diseño de Capas 
+
+## Introducción
+
+El **Patrón de Diseño de Capas** es un patrón arquitectónico ampliamente utilizado en el desarrollo de software. Este patrón organiza la aplicación en capas, cada una con responsabilidades específicas, lo que facilita la separación de preocupaciones, la escalabilidad y el mantenimiento del sistema.
+
+## ¿Qué es el Patrón de Diseño de Capas?
+
+El Patrón de Diseño de Capas estructura una aplicación dividiendo su funcionalidad en diferentes niveles o capas. Cada capa tiene una responsabilidad bien definida y se comunica solo con las capas adyacentes. Las capas más comunes incluyen la presentación, la lógica de negocio, el acceso a datos y la base de datos.
+
+### Componentes Principales
+
+- **Capa de Presentación:**
+  - Responsable de la interacción con el usuario.
+  - Maneja la lógica de la interfaz de usuario (UI) como controladores, vistas o interfaces gráficas.
+  - Se comunica con la capa de lógica de negocio para obtener y mostrar los datos necesarios.
+
+- **Capa de Lógica de Negocio:**
+  - Contiene las reglas de negocio y la lógica principal de la aplicación.
+  - Actúa como intermediario entre la capa de presentación y la capa de acceso a datos.
+  - Procesa las operaciones solicitadas por la capa de presentación y delega la persistencia a la capa de acceso a datos.
+
+- **Capa de Acceso a Datos:**
+  - Gestiona la persistencia y recuperación de datos.
+  - Contiene repositorios o servicios de acceso a datos que realizan operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en la base de datos.
+  - Proporciona una abstracción sobre el acceso a la base de datos para la capa de lógica de negocio.
+
+- **Capa de Base de Datos:**
+  - Interactúa directamente con la base de datos.
+  - Incluye la configuración de la base de datos, esquemas, y scripts SQL.
+  - Encapsula las interacciones físicas con la base de datos.
+
+### Ventajas
+
+- **Separación de responsabilidades:** Cada capa tiene una función específica, lo que mejora la organización del código y facilita la localización de problemas.
+- **Facilidad de mantenimiento:** Cambios en una capa suelen tener un impacto mínimo en las demás, lo que reduce el riesgo de errores al modificar el código.
+- **Reutilización de código:** Las capas como la de acceso a datos y la lógica de negocio pueden ser reutilizadas en diferentes interfaces de usuario.
+- **Escalabilidad:** Permite escalar la aplicación fácilmente, ya sea horizontalmente (agregando más servidores) o verticalmente (mejorando el hardware).
+
+### Desventajas
+
+- **Complejidad:** Introduce capas adicionales, lo que puede aumentar la complejidad del sistema, especialmente en aplicaciones simples.
+- **Rendimiento:** Puede haber una ligera sobrecarga en el rendimiento debido a las múltiples capas de abstracción.
+- **Rigidez:** A veces, puede ser difícil modificar o extender la funcionalidad de una capa sin afectar a las capas adyacentes.
+
+### Cuándo Usarla
+
+- **Aplicaciones empresariales:** Ideal para sistemas de gran tamaño con múltiples módulos y funcionalidades complejas.
+- **Proyectos a largo plazo:** Adecuado para proyectos donde la mantenibilidad y la escalabilidad son prioritarias.
+- **Sistemas modulares:** Útil cuando se necesita un diseño modular que permita cambios y extensiones en partes específicas del sistema sin afectar a otras.
 
