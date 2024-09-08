@@ -154,8 +154,8 @@ El Patrón de Diseño de Capas estructura una aplicación dividiendo su funciona
 - **Proyectos a largo plazo:** Adecuado para proyectos donde la mantenibilidad y la escalabilidad son prioritarias.
 - **Sistemas modulares:** Útil cuando se necesita un diseño modular que permita cambios y extensiones en partes específicas del sistema sin afectar a otras.
 
-Patron N4 
-# Patrón de Diseño Enfocado al Dominio (Domain-Driven Design, DDD) en Proyecto XYZ
+# Patron N4 
+## Patrón de Diseño Enfocado al Dominio (Domain-Driven Design, DDD).
 
 ## Introducción
 
