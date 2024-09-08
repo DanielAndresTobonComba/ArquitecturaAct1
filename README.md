@@ -194,6 +194,11 @@ El Diseño Enfocado al Dominio (DDD) organiza la estructura y el desarrollo de u
   - Representan hechos importantes que han ocurrido en el dominio.
   - Pueden ser utilizados para desencadenar acciones dentro o fuera del sistema.
 
+
+### Representación gráfica
+
+![Patron enfocado al dominio](/IMGS/Patron-Dominio.png)
+
 ### Ventajas
 
 - **Modelo de dominio rico:** Permite capturar de manera detallada y precisa las reglas y comportamientos del dominio.
@@ -212,3 +217,64 @@ El Diseño Enfocado al Dominio (DDD) organiza la estructura y el desarrollo de u
 - **Dominios complejos:** Ideal para proyectos donde el dominio del problema es complicado y evoluciona con el tiempo.
 - **Aplicaciones empresariales:** Adecuado para sistemas grandes que requieren una lógica de negocio sofisticada.
 - **Proyectos con larga vida útil:** Recomendado para proyectos que se mantendrán y evolucionarán durante un largo período.
+
+
+# Patron N5 
+
+# Patrón Model-View-Presenter (MVP).
+
+## Introducción
+
+El **Patrón Model-View-Presenter (MVP)** es un patrón arquitectónico que separa la lógica de presentación de la interfaz de usuario (UI), permitiendo una mejor organización del código y facilitando su testeo y mantenimiento. MVP es una evolución del patrón Model-View-Controller (MVC) y es comúnmente utilizado en aplicaciones con interfaces gráficas (GUIs), especialmente en entornos donde es importante desacoplar la lógica de presentación de la UI, como en aplicaciones móviles o de escritorio.
+
+## ¿Qué es el Patrón Model-View-Presenter?
+
+El patrón MVP divide una aplicación en tres componentes principales: Modelo (Model), Vista (View) y Presentador (Presenter). Cada uno tiene una responsabilidad clara:
+
+### Componentes Principales
+
+- **Model (Modelo):**
+  - Representa los datos y la lógica de negocio de la aplicación.
+  - Maneja el acceso a datos, como consultas a bases de datos, y las reglas de negocio.
+  - No tiene conocimiento de la vista ni del presentador.
+
+- **View (Vista):**
+  - Es la interfaz de usuario que muestra los datos al usuario y captura las entradas.
+  - Se comunica con el presentador para realizar acciones, pero no contiene lógica de negocio.
+  - Debe ser lo más simple posible, enfocándose en la presentación de datos.
+
+- **Presenter (Presentador):**
+  - Actúa como intermediario entre la vista y el modelo.
+  - Recibe la entrada de la vista, la procesa (a veces usando el modelo), y actualiza la vista en consecuencia.
+  - Contiene la lógica de presentación, pero no realiza directamente operaciones sobre la vista ni maneja datos directamente.
+
+### Flujo de Trabajo
+
+1. El **usuario** interactúa con la **View**.
+2. La **View** notifica al **Presenter** sobre la acción del usuario.
+3. El **Presenter** invoca la lógica del **Model** para procesar los datos o realizar operaciones.
+4. El **Model** devuelve los datos procesados al **Presenter**.
+5. El **Presenter** actualiza la **View** con los nuevos datos.
+
+![Patron MVP](/IMGS/mvp-patron.png)
+
+
+### Ventajas
+
+- **Separación de responsabilidades:** MVP desacopla la lógica de presentación de la UI, lo que facilita el mantenimiento y la prueba del código.
+- **Facilidad de testeo:** Como la lógica de presentación está separada de la vista, los presenters pueden ser testeados unitariamente sin necesidad de interactuar con la UI.
+- **Reusabilidad:** Las vistas y los presenters pueden ser reutilizados o modificados de forma independiente.
+
+### Desventajas
+
+- **Complejidad adicional:** Introduce un componente adicional (el presenter), lo que puede aumentar la complejidad en proyectos pequeños o simples.
+- **Sobreacoplamiento:** A veces, los presenters pueden volverse demasiado complejos si manejan demasiada lógica o si intentan controlar demasiadas vistas.
+
+### Cuándo Usarla
+
+- **Aplicaciones con interfaces de usuario complejas:** Cuando la UI tiene mucha lógica de presentación, MVP ayuda a mantener el código organizado.
+- **Aplicaciones donde la testabilidad es clave:** MVP facilita la creación de tests unitarios para la lógica de presentación.
+- **Proyectos donde la UI cambia frecuentemente:** MVP permite modificar la vista sin afectar la lógica de presentación o el modelo.
+
+
+
